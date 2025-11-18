@@ -11,6 +11,7 @@
 	<groupId>com.shiva</groupId>
 	<artifactId>RescueRide</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 	<name>RescueRide</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
@@ -27,7 +28,10 @@
 		<url/>
 	</scm>
 	<properties>
-		<java.version>25</java.version>
+		<java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.release>17</maven.compiler.release>
 	</properties>
 	<dependencies>
         <!-- JJWT -->
