@@ -2,8 +2,11 @@ package com.shiva.RescueRide.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.servers.Server;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.List;
 
 @Configuration
 public class SwaggerConfig {
@@ -12,8 +15,11 @@ public class SwaggerConfig {
     public OpenAPI vehiclePullingOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Vehicle Pulling Service API")
-                        .description("APIs for Vehicle Pulling / Towing Service")
-                        .version("v1.0"));
+                        .title("RescueRide API")
+                        .version("1.0")
+                        .description("API documentation for RescueRide Application"))
+                .servers(List.of(
+                        new Server().url("/").description("Default Server URL")
+                ));
     }
 }

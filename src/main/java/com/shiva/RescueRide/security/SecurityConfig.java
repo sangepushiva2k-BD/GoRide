@@ -46,14 +46,18 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         // Public endpoints (no auth required)
                         .requestMatchers(
-                                "/api/auth/**",
-                                "/v3/api-docs/**",
-                                "/swagger-ui/**",
                                 "/swagger-ui.html",
+                                "/swagger-ui/**",
+                                "/v3/api-docs/**",
                                 "/swagger-resources/**",
-                                "/webjars/**"
+                                "/swagger-resources",
+                                "/webjars/**",
+                                "/configuration/**",
+                                "/api-docs/**"
                         ).permitAll()
-                        // everything else requires JWT
+                        // Allow public endpoints
+                        .requestMatchers("/api/auth/**", "/health", "/").permitAll()
+                        // Secure all other endpoints
                         .anyRequest().authenticated()
                 )
                 .userDetailsService(customUserDetailsService)
