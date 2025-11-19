@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Data
 @Builder
@@ -27,5 +28,5 @@ public class TowingRequestResponseDto {
     private Double finalPrice;
 
     private String assignedDriverId;
-    private String assignedVehicleId;
+    private UUID assignedVehicleId;
 }

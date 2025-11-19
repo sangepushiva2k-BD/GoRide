@@ -56,7 +56,7 @@ public class SecurityConfig {
                                 "/api-docs/**"
                         ).permitAll()
                         // Allow public endpoints
-                        .requestMatchers("/api/auth/**", "/health", "/").permitAll()
+                        .requestMatchers("/auth/login","/auth/register").permitAll()
                         // Secure all other endpoints
                         .anyRequest().authenticated()
                 )

@@ -1,5 +1,6 @@
 package com.shiva.RescueRide.dto.auth;
 
+import com.shiva.RescueRide.entities.Vehicle;
 import com.shiva.RescueRide.enums.AppEnums;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,4 +11,6 @@ public class AuthResponse {
     private String token;
     private String userId;
     private AppEnums.UserRole role;
+    private Vehicle vehicle;
+    private AppEnums.DriverStatus status;
 }

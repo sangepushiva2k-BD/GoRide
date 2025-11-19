@@ -1,6 +1,7 @@
 package com.shiva.RescueRide.security;
 
 import com.shiva.RescueRide.entities.User;
+import com.shiva.RescueRide.entities.Vehicle;
 import com.shiva.RescueRide.enums.AppEnums;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -21,8 +22,16 @@ public class CustomUserDetails implements UserDetails {
         return user.getId();
     }
 
+    public Vehicle getVehicle() {
+        return user.getVehicle();
+    }
+
     public AppEnums.UserRole getRole() {
         return user.getRole();
+    }
+
+    public AppEnums.DriverStatus getStatus() {
+        return user.getStatus();
     }
 
     @Override
